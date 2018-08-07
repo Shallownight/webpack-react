@@ -25,6 +25,7 @@ module.exports = {
           }
         }
       },
+      // css解析
       {
         test: /\.css$/,
         use: [
@@ -33,6 +34,16 @@ module.exports = {
           {loader: 'style-loader'},
           // css-loader用于将css文件预处理成模块然后打包到构建文件中，并不会插入页面
           {loader: 'css-loader'}
+        ]
+      },
+      // 图片解析
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {}
+          }
         ]
       }
     ]

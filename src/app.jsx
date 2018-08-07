@@ -1,11 +1,12 @@
 import React from 'react';
-import Hello from './components/hello/index.jsx'
+import Tip from './components/tip/index.jsx'
+import './app.css'
 
 export default class App extends React.Component {
   render() {
     return (
-      <div>
-        <Hello />
+      <div className='container'>
+        <Tip />
       </div>
     )
   }
