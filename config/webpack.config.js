@@ -1,4 +1,5 @@
 const path = require('path');
+const HTMLPlugin = require('html-webpack-plugin');
 
 module.exports = {
   // 打包入口
@@ -24,5 +25,8 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new HTMLPlugin()
+  ]
 }
