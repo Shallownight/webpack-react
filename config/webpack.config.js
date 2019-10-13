@@ -4,12 +4,16 @@ const HTMLPlugin = require('html-webpack-plugin');
 module.exports = {
   // 打包入口
   entry: {
-    app: path.join(__dirname, '../src/app.js')
+    app: path.join(__dirname, '../src/index.js')
   },
   // 打包出口
   output: {
-    filename: '[name].js',
-    path: path.join(__dirname, '../dist')
+    filename: '[name].[hash].js',
+    path: path.join(__dirname, '../dist'),
+    // publicPath: '/'
+  },
+  resolve: {
+    extensions:['.js','.jsx','.json'],
   },
   module: {
     rules: [
