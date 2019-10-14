@@ -2,6 +2,9 @@ const path = require('path');
 const HTMLPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+// package.json中，通过 cross-env 注册的环境判断变量
+const ENV = process.env.NODE_ENV;
+
 module.exports = {
   // 打包入口
   entry: {
