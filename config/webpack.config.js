@@ -1,5 +1,6 @@
 const path = require('path');
 const HTMLPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   // 打包入口
@@ -33,9 +34,17 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '/',
+              // hmr: process.env.NODE_ENV === 'development',
+            },
+          },
           // 加载器的执行顺序是从后往前的，所以style-loader在css-loader前面。顺序很重要。
           // style-loader用于将预处理后的css插入到页面
-          {loader: 'style-loader'},
+          // 使用MiniCssExtractPlugin后不需要用style-loader了
+          // {loader: 'style-loader'},
           // css-loader用于将css文件预处理成模块然后打包到构建文件中，并不会插入页面
           {loader: 'css-loader'}
         ]
@@ -53,6 +62,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new HTMLPlugin()
+    new HTMLPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+      ignoreOrder: false,
+    }),
   ]
 }
