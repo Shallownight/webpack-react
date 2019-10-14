@@ -9,7 +9,7 @@ module.exports = {
   },
   // 打包出口
   output: {
-    filename: '[name].[hash].js',
+    filename: '[name].[hash:8].js',
     path: path.join(__dirname, '../dist'),
     // publicPath: '/'
   },
@@ -64,8 +64,8 @@ module.exports = {
   plugins: [
     new HTMLPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
+      filename: '[name].[hash:8].css',
+      chunkFilename: '[name].[hash:8].css',
       ignoreOrder: false,
     }),
   ]
