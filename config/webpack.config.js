@@ -22,6 +22,9 @@ module.exports = {
       '@': path.resolve(__dirname, '../src/')
     }
   },
+  // externals: {
+  //   jquery: 'jQuery'
+  // },
   module: {
     rules: [
       // Babel-loader，将非es5语法转化为es5语法

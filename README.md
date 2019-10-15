@@ -11,3 +11,5 @@ npm run build       进行打包
 3. HtmlWebpackPlugin 引入模板文件, 可以在模板文件写一些全局的东西（引入SDK等）
 
 4. 引入alias
+
+5. externals根据官网配置，在devServer中仍然报错: Module not found，先记录

@@ -1,9 +1,15 @@
 import React from 'react';
 import assets from '@/assets';
+// import $ from 'jquery';
 
 import './index.css';
 
 export default class Biological extends React.Component {
+
+    // componentDidMount = () => {
+    //     console.log(typeof $);
+    // }
+
     helloWorld = () => {
         console.log('hello world');
     }
