@@ -13,3 +13,5 @@ npm run build       进行打包
 4. 引入alias
 
 5. externals根据官网配置，在devServer中仍然报错: Module not found，先记录
+
+6. webpack-bundle-analyzer 进行打包分析，先允许build在dist文件夹生成分析文件，再用npm run bundle-report查看文件

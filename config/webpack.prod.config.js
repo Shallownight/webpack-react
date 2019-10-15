@@ -4,6 +4,7 @@ const baseWebpackConfig = require('./webpack.config.js');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = merge(baseWebpackConfig, {
   mode: 'production',
@@ -16,7 +17,14 @@ module.exports = merge(baseWebpackConfig, {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new BundleAnalyzerPlugin({
+        analyzerMode: 'disabled',
+        generateStatsFile: true,
+        statsOptions: {
+            source: false
+        }
+    })
   ],
 })
 

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.config.js",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --config config/webpack.dev.config.js"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --config config/webpack.dev.config.js",
+    "bundle-report": "webpack-bundle-analyzer --port 8123 dist/stats.json"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.16.5",
+    "webpack-bundle-analyzer": "^3.5.2",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5",
     "webpack-merge": "^4.1.4"
