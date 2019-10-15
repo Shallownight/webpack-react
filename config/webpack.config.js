@@ -1,5 +1,5 @@
 const path = require('path');
-const HTMLPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // package.json中，通过 cross-env 注册的环境判断变量
@@ -67,7 +67,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new HTMLPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'React webpack',
+      filename: 'index.html',
+      template: path.join(__dirname, './template/index.html')
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].[hash:8].css',
       chunkFilename: '[name].[hash:8].css',

@@ -7,3 +7,5 @@ npm run build       进行打包
 扩展：后续开发多页时，可以分离公用的JS文件。    
 
 2. 生产环境配置中加上UglifyJsPlugin和OptimizeCSSAssetsPlugin，分别压缩JS和CSS代码   
+
+3. HtmlWebpackPlugin 引入模板文件, 可以在模板文件写一些全局的东西（引入SDK等）
