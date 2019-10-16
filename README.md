@@ -25,3 +25,5 @@ npm run build       进行打包
 10. 使用chunkSplit将node_module打包独立出来
 
 11. 加入eslint，npm run eslint 校验
+
+12. 加入husky和lint-staged，每次提交时检测stage下的eslint格式。（可以再加入prettier）
