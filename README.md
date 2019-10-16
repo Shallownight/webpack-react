@@ -23,3 +23,5 @@ npm run build       进行打包
 9. 使用`webpack-bundle-analyzer`进行打包分析，先允许build在dist文件夹生成分析文件，再用npm run bundle-report查看文件
 
 10. 使用chunkSplit将node_module打包独立出来
+
+11. 加入eslint，npm run eslint 校验
